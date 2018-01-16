@@ -1,0 +1,44 @@
+﻿@charset "utf-8";
+.c999999{ color:#999999}
+.c666666{ color:#666666}
+.lh25{ line-height: 25px;}
+/**回访  标题  颜色**/
+.visi-Green{ color: #3c6; border-color: #3c6;}
+.visi-Red{ color: #f33; border-color: #f33;}
+.visi-Orange{ color: #f93; border-color: #f93;}
+/*文本对齐*/
+.justify_span_w49{width:49px;}
+.justify_span_w50{width:50px;}
+.justify_span_w60{width:60px;}
+.justify_span_w62{width:62px;}
+.justify_span_w70{width:70px;}
+.justify_span_w72{width:72px;}
+.justify_span_w90{width:90px;}
+.justify_span_w100{width:100px;}
+.justify_span_w120{width:120px;}
+.justify_span_w125{width:125px;}
+.justify_span{display:inline-block;text-align: justify;text-align-last: justify;-moz-text-align-last: justify;-webkit-text-align-last: justify;text-justify: inter-word;-ms-text-justify: inter-ideograph;}
+
+.taskDetails-click{ cursor: pointer;}
+.taskDetails-Hide{ width: 100%; position: absolute; top: 32px; left: 0px; background-color: #fff;z-index:2}
+.taskDetails-close,.add-messageClose,.Submit-close{ width: 18px; height: 18px; background: url(../images/pic/close_icon.png) no-repeat; background-size: 18px 18px; display: inline-block; cursor: pointer;}
+.taskDetailsHeight-top{ border-bottom: 1px solid #ededed;}
+.Compression-packDiv{ overflow: hidden;}
+.Compression-packDivLZ{ margin-left:60px;}
+.Compression-packDivR{ margin-left: 60px;}
+.Compression-packDiv img{ width: 50px; height: 50px; display: inline-block; margin-right:5px; float:left}
+.Compression-Left{ width: 60px;}
+.Compression-packDiv{ margin-left: 60px;}
+.textW365{ width: 365px;}
+.textH100{ height: 100px;}
+.taskDetailsHeight-bottom textarea{ width: 100%; height: 150px;}
+.Transfer-task-Hide{ width: 100%; position: absolute; top: 32px; left: 0px; background-color: #fff;}
+.Submit-Hide{ width: 100%; position: absolute; top: 32px; left: 0px; background-color: #fff; z-index:3;}
+.Connect-input input{ width: 87%;}
+.Connect-text textarea{ width: 87%;}
+
+
+/**2017-08-11**/
+.Submit_span_w50{ width:50px; display:inline-block; text-align:right}
+.Submit_span_w60{ width:60px; display:inline-block; text-align:right}
+.Submit_spanRight{ margin-left:54px}

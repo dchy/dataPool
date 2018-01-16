@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<style>
+	.event-div {
+		float: right;
+		height: 40px;
+		color: #09f;
+		line-height: 40px;
+		margin-right: 10px;
+		cursor: pointer;
+	}
+	
+	.thb-box {
+		position: absolute;
+		top: 10px;
+		left: 760px;
+		right: 10px;
+		border: 1px solid #09f;
+		padding: 20px;
+		z-index: 10;
+		height: 470px;
+		background: #fff;
+	}
+	
+	.CloseDiv {
+		float: right;
+	}
+	
+	.if-cs {
+		width: 925px;
+		height: 530px;
+		position: absolute;
+		right: 140px;
+		top: 10px;
+		z-index: 5;
+	}
+	
+	.on-zer {
+		padding: 4px 10px;
+		background: #33adff;
+		height: 29px;
+		line-height: 20px;
+		color: #FFF;
+		margin-top: 5px;
+		padding-left: 30px;
+	}
+	
+	.on-zer img {
+		position: absolute;
+		top: 6px;
+		left: 9px;
+	}
+	
+	.on-zer a {
+		color: #fff;
+		font-weight: 700;
+	}
+
+	.circlemark_box {
+				width: 25px;
+				height: 56px;
+				top: 50%;
+				margin-top: -28px;
+				right: 10px;
+				position: absolute
+			}
+	.circlemark_box .circlemark,
+	.circlemark_box .circlemark2 {
+		width: 25px;
+		height: 25px;
+		line-height: 23px;
+		text-align: center;
+		font-size: 14px;
+		font-weight: 700;
+		position: static;
+		display: block;
+		margin-top: 0
+	}
+
+	.circlemark_box .circlemark {
+		margin-bottom: 5px;
+	}
+
+
+</style>
+
+<style>
+	.cen-slid {
+		width: 100%;
+		position: absolute;
+		top: 0px;
+		left: -100%;
+		background: #fff;
+		opacity: 0;
+	}
+	
+	.cen-slid .tc-righttop-tab .cl-no {
+		font-size: 25px;
+		cursor: pointer;
+	}
+	
+	.cen-slid .tc-righttop-tab i {
+		width: 4px;
+		height: 4px;
+		background: #0092FF;
+		border-radius: 50%;
+		display: block;
+		position: absolute;
+		left: -7px;
+		top: 0px;
+		bottom: 0;
+		margin: auto;
+	}
+	
+	.span-a {
+		position: absolute;
+		right: 28px;
+		top: 1px;
+		width: 40px;
+	}
+	
+	.apply-cour {
+		width: 100%;
+		position: absolute;
+		top: 0px;
+		left: -100%;
+		background: #fff;
+		opacity: 0;
+	}
+	
+	.apply-cour .tc-righttop-tab .cl-no {
+		font-size: 25px;
+		cursor: pointer;
+	}
+	
+	.apply-cour .tc-righttop-tab i {
+		width: 4px;
+		height: 4px;
+		background: #0092FF;
+		border-radius: 50%;
+		display: block;
+		position: absolute;
+		left: -7px;
+		top: 0px;
+		bottom: 0;
+		margin: auto;
+	}
+	
+	.apply-cour {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0px;
+		background: #fff;
+	}
+	
+	.appc-ul li {
+		float: left;
+	}
+	
+	.appc-ul span {
+		display: inline-block;
+		width: 65px;
+		line-height: 23px;
+		background: #F6F3F4;
+	}
+	
+	.bor-top {
+		border-top: 1px dashed #00CC00;
+	}
+	
+	.rig_close {
+		line-height: 18px;
+		font-size: 28px;
+		color: #aeaeae;
+		cursor: pointer;
+	}
+	
+	.if-uiTab1 {
+		width: 245px;
+		position: absolute;
+		top: 20px;
+		left: 10px;
+	}
+	
+	.wrapper .if-uiTab1 li {
+		width: 25%;
+		margin-right: 0;
+		text-align: center;
+	}
+</style>
+
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<!--保证IE浏览器以最高版本运行-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>应用平台</title>
+		<link rel="shortcut icon" href="./images/ico/bitbug_favicon.ico" />
+		<!--公共样式-->
+		<link rel="stylesheet" href="./css/rxui1.0.2.min.css" />
+		<link rel="stylesheet" href="./css/frame.css" />
+		<link rel="stylesheet" type="text/css" href="./css/mend-msg.css" />
+		<link rel="stylesheet" type="text/css" href="./css/page-daily.css" />
+		<link rel="stylesheet" type="text/css" href="./css/CorpsStyle.css" />
+		<link href="./css/KFpage-daily.css" rel="stylesheet" />
+		<link href="./css/deputyArmy.css" rel="stylesheet" />
+		<link href="./css/page-threecolumn.css" rel="stylesheet" />
+		<!--弹框-->
+		<script src="./js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body class="PersonmattZo clearfix pt10 relative" data-class="nav-vertical" style="height: 767px;">
+
+		<!--内容区 开始-->
+		<div id="main_content" class="relative" style=" margin-left: 10px">
+
+			<div class="wrapper AccordingDiv relative" id="vm_container" v-cloak>
+
+				<div class="wrapper clearfix pt10 pr10">
+
+					<!--start-->
+					<div id="div-yin" class="tc-left pr10 fl">
+
+						<!--左侧列表-->
+						<group-search v-on:search="searchEvent"></group-search>
+						<system-list v-bind:searchid="searchId" v-bind:type="t_type" v-bind:em_system="em_system" v-bind:random="random" v-on:clicktr="clicktrEvent">
+						</system-list>
+					</div>
+
+					<div class="tc-center fl ">
+						<!--中间二段-->
+						<middle-view v-bind:tid="tid">
+						</middle-view>
+					</div>
+
+					<!--待解决-->
+					<div class="dailyrgt-right relative pt5 ">
+						<div class="dailyrgt-personnel relative">
+							<div class="tc-righttop-tab j-tc-righttop-tab">
+								<ul class="RTtab clearfix fr "></ul>
+							</div>
+
+							<div class="dailyrgt-top relative">
+								<div class="dailyrgt-topR thinScroll" style="overflow-y:auto;">
+									<!--回访记录-->
+									<visit-record-develop v-bind:yid="yid" v-bind:type="1" v-bind:random="num_visit"></visit-record-develop>
+								</div>
+							</div>
+
+							<!--添加回访-->
+							<add-visit-view v-bind:yid="yid" v-bind:type="t_type" v-bind:em_system="em_system" v-on:send="addVisitEvent">
+							</add-visit-view>
+
+						</div>
+
+						<!--使命滑块-->
+						<div class="cen-slid  cen-slid3">
+							<div class="tc-righttop-tab j-tc-righttop-tab clearfix pl10 lh30">
+								<span class="cl-no fr">×</span>
+								<div class="cens-scroll pr5 ml10" id="mission-id3">
+								</div>
+							</div>
+
+						</div>
+
+						<!--过程滑块-->
+						<div class="cen-slid  cen-slid1">
+							<div class="tc-righttop-tab j-tc-righttop-tab clearfix pl10 lh30">
+								<!--<span class="relative">信访<i></i></span>-->
+								<span class="cl-no fr">×</span>
+							</div>
+							<div class="cens-scroll pr5 ml10" id="process">
+								<div class="process">
+									<div class="analyItem" v-for="item of list">
+										<p class="analyItemTit tx-center">{{item.date}}</p>
+										<div class="analyItemCon tx-center">
+											<p class="col-md-2"><span class="cLightGray pr8">总计</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">应做</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">标准</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">已做</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">结果</span></p>
+											<p class="col-md-1"><span class="cLightGray pr8">差值</span></p>
+											<p class="col-md-1"><span class="cLightGray pr8">金额</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8 tx-fb cGreen">{{item.total}}</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8 tx-fb cGreen">{{item.should}}</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8 tx-fb cGreen">{{item.standard}}</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8 tx-fb cGreen">{{item.haveToDo}}</span></p>
+											<p class="col-md-2"><span v-bind:class="[{'cGreen':item.result=='合格'},{'cRed':item.result=='不合格'},'tx-fb','pr8','cLightGray']">{{item.result}}</span></p>
+											<p class="col-md-1"><span class="cLightGray pr8 tx-fb cRed">{{item.difference}}</span></p>
+											<p class="col-md-1"><span class="cLightGray pr8 tx-fb cRed">{{item.money}}元</span></p>
+										</div>
+									</div>
+								</div>
+
+                                <div class="deal">
+                                    <!-- ko foreach : datapoolDealWeek -->
+                                    <div class="analyItem" >
+                                        <p class="analyItemTit tx-center" data-bind="text:dataDate"></p>
+                                        <div class="analyItemCon tx-center">
+                                            <p class="col-md-2"><span class="cLightGray pr8">个数</span></p>
+                                            <p class="col-md-2"><span class="cLightGray pr8"></span></p>
+                                            <p class="col-md-2"><span class="cLightGray pr8">单价</span></p>
+                                            <p class="col-md-2"><span class="cLightGray pr8"></span></p>
+                                            <p class="col-md-2"><span class="cLightGray pr8">金额</span></p>
+                                            <p class="col-md-1"><span class="cLightGray pr8"></span></p>
+                                            <p class="col-md-1"><span class="cLightGray pr8"></span></p>
+                                            <p class="col-md-2"><span class="cLightGray pr8 tx-fb cGreen" data-bind="text:dealCount"></span></p>
+                                            <p class="col-md-2"><span class="cLightGray pr8 tx-fb cGreen"></span></p>
+                                            <p class="col-md-2"><span ></span></p>
+                                            <p class="col-md-2"><span class="cLightGray pr8 tx-fb cGreen" data-bind="text:addunit(price)">元</span></p>
+                                            <p class="col-md-1"><span class="cLightGray pr8 tx-fb cRed"></span></p>
+                                            <p class="col-md-1"><span class="cLightGray pr8 tx-fb cRed"></span></p>
+                                            <p class="col-md-2"><span class="cLightGray pr8 tx-fb cRed" data-bind="text:addunit(money)">元</span></p>
+                                        </div>
+                                    </div>
+                                    <!-- /ko -->
+                                </div>
+							</div>
+
+							<div class="pt10 pl10 pr5" style="height: 250px; border-top: 5px solid #f1f1f1; ">
+								<div class="process">
+									<div class="analyItem">
+										<p class="analyItemTit tx-center">本周</p>
+										<div class="analyItemCon tx-center">
+											<p class="fl col-md-4"><span class="cLightGray pr8">合格</span><span class="cGreen">{{week.qualified}}</span></p>
+											<p class="fl col-md-4"><span class="cLightGray pr8">不合格</span><span class="cRed">{{week.unqualified}}</span></p>
+											<p class="fl col-md-4"><span class="cRed tx-fb fz14">{{week.money}}元</span></p>
+										</div>
+									</div>
+									<div class="analyItem">
+										<p class="analyItemTit tx-center">本月</p>
+										<div class="analyItemCon tx-center">
+											<p class="fl col-md-4"><span class="cLightGray pr8">合格</span><span class="cGreen">{{month.qualified}}</span></p>
+											<p class="fl col-md-4"><span class="cLightGray pr8">不合格</span><span class="cRed">{{month.unqualified}}</span></p>
+											<p class="fl col-md-4"><span class="cRed tx-fb fz14">{{month.money}}元</span></p>
+										</div>
+									</div>
+								</div>
+                                <div class="deal">
+                                    <div class="analyItem">
+                                        <p class="analyItemTit tx-center">本周</p>
+                                        <div class="analyItemCon tx-center" data-bind="with:datapoolDealWeekSum">
+                                            <p class="fl col-md-4"><span class="cLightGray pr8">个数</span><span class="cGreen" data-bind="text:dealCount"></span></p>
+                                            <p class="fl col-md-4"><span class="cLightGray pr8">单价</span><span class="cGreen" data-bind="text:addunit(price)">元</span></p>
+                                            <p class="fl col-md-4"><span class="cLightGray pr8">金额</span><span class="cRed" data-bind="text:addunit(money)">元</span></p>
+                                        </div>
+                                    </div>
+                                    <div class="analyItem">
+                                        <p class="analyItemTit tx-center">本月</p>
+                                        <div class="analyItemCon tx-center" data-bind="with:datapoolDealMonthSum">
+                                            <p class="fl col-md-4"><span class="cLightGray pr8">个数</span><span class="cGreen" data-bind="text:dealCount"></span></p>
+                                            <p class="fl col-md-4"><span class="cLightGray pr8">单价</span><span class="cGreen" data-bind="text:addunit(price)">元</span></p>
+                                            <p class="fl col-md-4"><span class="cLightGray pr8">金额</span><span class="cRed" data-bind="text:addunit(money)">元</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+							</div>
+						</div>
+
+						<!--结果滑块-->
+						<div class="cen-slid pl10 cen-slid2">
+							<div class="tc-righttop-tab j-tc-righttop-tab clearfix pl10 lh30">
+								<span class="relative">记录<i></i></span>
+								<span class="cl-no fr">×</span>
+							</div>
+							<div class="cens-scroll pr5">
+								<div>
+									<div class="analyItem">
+										<p class="analyItemTit tx-center">任务1</p>
+										<div class="analyItemCon">
+											<p class="col-md-2"><span class="cLightGray pr8">执行人</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">时间</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">描述</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">图片</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">奖</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">罚</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">珊瑚</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">12-20</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">任务进行中</span></p>
+											<p class="col-md-2">
+												<span class="cLightGray pr8">
+                                                    <img style="width:20px;" src="./images/ico/upImg_off.png" />
+                                                </span>
+											</p>
+											<p class="col-md-2"><span class="cLightGray pr8">0</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">0</span></p>
+										</div>
+									</div>
+									<div class="analyItem">
+										<p class="analyItemTit tx-center">任务2</p>
+										<div class="analyItemCon">
+											<p class="col-md-2"><span class="cLightGray pr8">执行人</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">时间</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">描述</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">图片</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">奖</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">罚</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">珊瑚</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">12-21</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">任务进行中</span></p>
+											<p class="col-md-2">
+												<span class="cLightGray pr8">
+
+                                                    <img style="width:20px;" src="./images/ico/upImg_off.png" />
+                                                </span>
+											</p>
+											<p class="col-md-2"><span class="cLightGray pr8">0</span></p>
+											<p class="col-md-2"><span class="cLightGray pr8">0</span></p>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--end-->
+				</div>
+			</div>
+
+			<!--<iframe class="if-cs hide" src="http://e.p.rx/Event/Launch/IframeZ?card=@CookieManager.GetCookieValue(CookieType.em_card,Request.Cookies)"></iframe>-->
+			<div class="closeevent hide" style="font-size:25px;position:absolute;right:170px;top:30px;cursor:pointer;z-index:10001" onclick="closeevent()">×</div>
+		</div>
+		</div>
+
+		<!--编辑弹框-->
+		<div class="contentUp-alert hide">
+			<div class="alertCon plr10 contentUPDiv">
+				<iframe src="" id="alertTextBoxIframe" style="width:100%;height:400px"></iframe>
+			</div>
+			<div class="alertFoot pb10">
+				<div class="dis_il_block">
+					<input type="button" value="提交" data-plate="" id="content_view_submit" class="uiBtn-normal uiBtn-blue">
+				</div>
+			</div>
+		</div>
+
+		<script src="./js/jquery.rippleria.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/rxued.js" type="text/javascript" charset="utf-8"></script>
+		<script src="./js/frame.js"></script>
+		<script src="./js/jquery.rotate.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="./js/vue.min.js"></script>
+		<script src="./js/vue-resource.min.js"></script>
+		<script src="./js/lodash.min.js"></script>
+		<script src="./js/My97DatePicker/WdatePicker.js"></script>
+		<script src="./js/layui-v2.1.1/layui/lay/modules/layer.js"></script>
+		<script src="./components/Manager/index.js"></script>
+        <script src="./js/knockout/dist/knockout.js"></script>
+		<script type="text/javascript">
+			function countdaily() {
+				//计算添加宽度
+				$(".daily_taskAddDiv").width($("body").width() - $(".dailylft").width() - 65);
+
+				//左侧
+				$(".dailylft").height($("body").height() - $("#main_header").outerHeight(true) - 20);
+				$(".dailyrgt-left").height($("body").height() - $("#main_header").outerHeight(true) - 20);
+				$(".dailyrgt-right").height($("body").height() - $("#main_header").outerHeight(true) - 25);
+				$(".dailylftScroll").height($(".dailylft").height() - $(".dailylftfoot").outerHeight(true));
+
+				$(".PerScroll").height($(".dailylftScroll").height() - $(".dailyLeftNav").height() - $(".daily_title").height() - $(".uiTab1condiv_header").height() - $(".dailylft_title").height() - $(".dailylftfoot").outerHeight(true))
+				//中间
+				$(".uiTab7Con").height($(".dailyrgt-left").height() - $(".Personal_dailyrgt").outerHeight(true));
+				//右侧
+				$(".dailyrgt-top").height($(".dailyrgt-right").height() - $(".dailyrgt-bottom").outerHeight(true) - $(".tc-righttop-tab").height());
+				//信息
+				$(".dailyrgt_information").height($(".dailyrgt-top").height());
+				//回访
+				$(".dailyrgt_Visit").height($(".dailyrgt-top").height());
+
+				//右侧列表
+				$(".projectHide_Conduct").height($(".dailyrgt-right").outerHeight(true) - 30);
+				$(".PH_conductTbody").height($(".projectHide_Conduct").height() - $(".PH_conductHeader").outerHeight() - 30);
+
+				//系统   岗位
+				$(".postDivHide").height($(".dailyrgt-right").height());
+				$(".postDivHideliheihgt").height($(".postDivHide").height() - 85);
+
+				$(".solved_divHideH").height($(".solved_divHide").outerHeight(true) - $(".solved_divHideBottom").outerHeight(true) - 15);
+
+				//分  系统弹框
+				$(".HistoryArmy").height($(".dailyrgt-top").height());
+				$(".HistoryCon").height($(".HistoryArmy").height() - 35);
+
+				//////////////////////////////////////////////////////////////
+				//右侧   事件
+				$(".dailyrgt-evaluation").height($(".dailyrgt-right").outerHeight(true));
+				$(".evaluation_top").height($(".dailyrgt-evaluation").height() - $(".evaluation_bottom").outerHeight(true));
+				$(".visiterecord").height($(".evaluation_top").outerHeight(true));
+				$(".visiterecord-rgt-scroll").height($(".evaluation_top").outerHeight(true) - 20);
+
+				$(window).resize(function() {
+					countdaily();
+				});
+				if('@ViewBag.flag' == '1') {
+					$(".dailylftScroll").height($(".dailylft").height() - $(".dailylftfoot").outerHeight(true) - 35);
+					$(".uiTab1condiv_tbody").height($(".dailylftScroll").height() - $(".uiTab1condiv_header").outerHeight() - 30);
+					$(".uiTab1condiv_tbody").slimScroll({
+						height: $(".uiTab1condiv_tbody").eq(0).height(),
+						borderRadius: "6px"
+					});
+				}
+			}
+
+			$(function() {
+				$(".setup_nav").click(function() {
+					$(".nav-horizontal .more-nav-li").removeClass("open_link");
+					$(".nav-ul .open").removeClass("open");
+					$(".nav-ul li ul").hide();
+					$("body").toggleClass("nav-collapsed-min");
+					if($(this).attr("num") == "1") {
+
+						$(this).attr("num", "2");
+						$("#main_content").css("marginLeft", "50px");
+					} else {
+						$(this).attr("num", "1");
+						$("#main_content").css("marginLeft", "180px");
+					}
+				})
+				$(".setup_nav").click();
+				//计算高度
+				countdaily();
+				$(".Issue-tasksDivHeight").slimScroll({
+					height: $(".Issue-tasksDivHeight").height(),
+					borderRadius: "6px"
+				});
+				$(".Issue-tasksTKHide-mainTop").slimScroll({
+					height: $(".Issue-tasksTKHide-mainTop").height(),
+					borderRadius: "6px"
+				});
+				//代办2
+				$(".dailyrgt-topL .dailyrgt_org").click(function() {
+					if(!$(this).hasClass("solved_cur")) {
+						$(this).addClass("solved_cur");
+						$(".solved_divHide").animate({
+							left: "0px"
+						});
+						//$(".dailyrgt_VisitDiv").hide();
+
+						//滚动条
+						$(".solved_divHide").slimScroll({
+							height: "100%",
+							borderRadius: "6px"
+						});
+						countdaily();
+
+					} else {
+						$(this).removeClass("solved_cur");
+						$(".solved_divHide").animate({
+							left: "-200%"
+						});
+						//$(".dailyrgt_VisitDiv").fadeIn("slow");
+					}
+				});
+				//左侧表格点击
+				$(".dailylft tbody tr").click(function() {
+					$(this).addClass("tractive").siblings().removeClass("tractive");
+				});
+
+				//周考核
+				$(".dailyrgt-bottomR span").click(function() {
+					$(".dailyrgt_person_hide").animate({
+						right: "0px"
+					})
+				});
+			});
+		</script>
+
+		<script>
+			//下拉不收回处理
+			$(function() {
+				$(".select_clickSpan").click(function() {
+					if(!$(this).hasClass("select-cur")) {
+						$(this).addClass("select-cur");
+						$(this).parent().find(".select_clickDiv").show();
+					} else {
+						$(this).removeClass("select-cur");
+						$(".select_clickDiv").hide();
+					}
+				})
+				$(".select_clickDiv span").click(function() {
+					$(".select_clickSpan").removeClass("select-cur");
+					$(".select_clickDiv").hide();
+				});
+				//代办 关闭
+				$(".solved_divHide_close").click(function() {
+					$(".solved_divHide").animate({
+						left: "-200%"
+					});
+				});
+
+				//获取积分
+				$.get('http://d.p.rx/DevelopProject/System/GetPersonalPoints', {
+					params: {
+						monthNum: this.value
+					}
+				}).then(function(res) {
+					$(".point-div a").html(res);
+				}, 'html');
+
+				//积分
+				$(".point-div a").click(function() {
+					$(".thb-box").show();
+					$(".thb-box").stop().animate({
+						"right": "10px"
+					}, 500);
+				});
+				$(".CloseDiv").click(function() {
+					$(".thb-box").hide();
+					$('.tablecontainer').children().remove();
+				});
+
+				//iframe
+				//          $(".event-div").click(function () {
+				//              $(".if-cs").toggleClass("hide");
+				//              $('.closeevent').toggleClass('hide');
+				//          });
+				//          $.get('http://d.p.rx/Manager/Commen/GetExecuteNum', null, function (res) {
+				//              $('#topNum').html(res[0].totExecute);
+				//          }, 'json');
+			});
+
+			function closeevent() {
+				$(".if-cs").toggleClass("hide");
+				$('.closeevent').toggleClass('hide');
+			}
+		</script>
+
+		<!--系统-->
+		<script>
+			//执  应用 团  师
+			$(function() {
+				//      	
+				//          //加载菜单
+				//          $('.military-index').addClass('active');
+				////          $("#dailyLeftNav").load("http://d.p.rx/Manager/Commen/CommenMenu?sys=3", function () {
+				////          
+				////          });
+				//			
+				//          //计算高度
+				//          countdaily();
+				//
+				//          //隔行换色
+				//          rxued.table.LChangeapart($(".uiTable  tbody tr"), "#fff", "#fcfcfc");
+				//          rxued.table.hoverChage($(".uiTable  tbody tr"), "#eaf4fe");
+				//          //左侧表格点击
+				$(".dailylft tbody tr").click(function() {
+					$(this).addClass("tractive").siblings().removeClass("tractive");
+				});
+			});
+            var VM = {};
+
+			var urls = "";
+            function changeUrl(data,markId) {
+                if(data=="3"){
+                    $(".process").show();
+                    $(".deal").hide();
+//                    urls = 'http://192.168.1.191:13201/command/corpsThreeStageInfo';
+                }else if (data=="4"){
+                    $(".process").hide();
+                    $(".deal").show();
+                    urls = 'http://api.idc.com/command/dealThreeInfo';
+                }
+
+                $.get('http://api.idc.com/command/dealThreeInfo',{"markId":markId},function(req){
+                    VM.datapoolDealWeek(req.weekList);
+                    VM.datapoolDealWeekSum(req.weekData);
+                    VM.datapoolDealMonthSum(req.monthData);
+                });
+
+
+            }
+
+            function addunit(data) {
+                return data+"元";
+            }
+
+			//过程 --营三段信息
+			$(function() {
+                //数据绑定
+                ko.applyBindings(VM);
+
+                $.get('http://api.idc.com/command/dealThreeInfo',{"markId":this.markId},function(req){
+
+                    VM.datapoolDealWeek(req.weekList);
+                    VM.datapoolDealWeekSum(req.weekData);
+                    VM.datapoolDealMonthSum(req.monthData);
+                });
+
+				var vm = new Vue({
+					el: '#vm_container',
+					data: {
+						tid: 0, //营id
+						searchId: 0,
+						t_type: '3',
+						em_system: '7',
+						random: 0,
+						num_visit: 0,
+						currview: 3,
+						list: [],
+						week: null,
+						month: null,
+						markId: 0,
+					},
+					watch: {
+						markId: function() {
+
+							//                      this.$http.get('http://d.p.rx/Manager/Index/DataPoolTwoLevel', { params: { markId: this.markId } }).then(function (res) {
+							this.$http.get('http://192.168.1.191:13201/command/corpsThreeStageInfo', {
+								params: {
+									markId: this.markId
+								}
+							}).then(function(res) {
+
+								this.list = res.body.weekList;
+								this.week = res.body.weekData;
+								this.month = res.body.monthDate;
+							});
+						}
+					},
+					methods: {
+						searchEvent: function(val) {
+							this.searchId = val;
+						},
+						clicktrEvent: function(val) {
+							this.tid = val;
+						},
+						addVisitEvent: function() {
+							this.num_visit = Math.random();
+						},
+						items_length: function() {
+							var num = 0;
+							var tmp = [];
+							var len = parseInt(this.items.length % 3 > 0 ? this.items.length / 3 + 1 : this.items.length / 3);
+							for(var i = 0; i < len; i++) {
+								tmp.push([{
+									item: this.items[num]
+								}, {
+									item: this.items[num + 1]
+								}, {
+									item: this.items[num + 2]
+								}]); //[...this.items];
+								num = num + 3;
+							}
+							this.items_new = tmp;
+							return tmp.length;
+						}
+					},
+					components: {
+						groupSearch: components.groupSearch(),
+						systemList: components.systemList(),
+						middleView: components.middleView(),
+						//                  visitRecordDevelop:visitRecordDevelop(),
+						addVisitView: components.addVisitView(),
+					},
+					ready: function() {
+						//					 $("#if-zhi").contents().find("#j-tc-center-content").hide();
+					}
+
+				});
+
+				//滚动条
+				$(".uiTab7ConScroll").slimScroll({
+					height: "100%",
+					borderRadius: "6px"
+				});
+				$(".cen-slid").height($("body").height() - $("#topnav").height() - 23);
+				$(".cens-scroll").height($(".cen-slid").height() - 275).slimScroll({
+					height: $(".cens-scroll").height()
+				});
+
+				//关闭三段滑块
+				$(".cl-no").click(function() {
+					$(this).parents(".cen-slid").stop().animate({
+						"left": "-100%",
+						"opacity": "0"
+					}, 500);
+					$(".analyItem").removeClass("anItemBor-active");
+				});
+
+				$(".juers1").click(function() {
+					$(this).addClass("anItemBor-active");
+					$(".dailyrgt-right .cen-slid1").stop().animate({
+						"left": "0%",
+						"opacity": "1"
+					}, 500);
+				});
+
+				$(".apply-cour").height($("body").height() - $("#topnav").height() - 263);
+				$(".rig_close").click(function() {
+					$(this).parents(".apply-cour").stop().animate({
+						"left": "-100%",
+						"opacity": "0"
+					}, 500);
+				});
+
+			});
+			
+			//使命 --池子信息--三段
+			function show3(campId, type, status, ddtime,remark) {
+				//alert($(".cen-slid1").css("left"))
+//				$(".cen-slid1").css("left","-100%");
+				//关闭三段
+				$(".cl-no").parents(".cen-slid").stop().animate({"left": "-100%","opacity": "0"}, 500);
+				$(".analyItem").removeClass("anItemBor-active");
+
+				if(remark == undefined){
+					remark = "";
+				}else{
+					remark = remark.replace("<br>","\r\n");
+				}
+				$(".dailyrgt-right .cen-slid3").stop().animate({
+					"left": "0%",
+					"opacity": "1"
+				}, 500);
+
+				var s = '';
+				var s1 = 'checked="checked"';
+				if(status == 1) {
+					s = s1;
+					s1 = '';
+				}
+				var t1 = '';
+				if(type == 1) {
+					$(".restart").removeClass("anItemBor-active");
+					$(".restart:first").addClass("anItemBor-active");
+					t1 = '接入';
+					$('#mission-id3').children().remove();
+					
+					//anItemBor-active
+					//mission-from
+				}
+				if(type == 2) {
+					$(".restart").removeClass("anItemBor-active");
+					$(".restart").eq(1).addClass("anItemBor-active");
+					
+					t1 = '数据';
+					$('#mission-id3').children().remove();
+				}
+				if(type == 3) {
+					$(".restart").removeClass("anItemBor-active");
+					$(".restart").eq(2).addClass("anItemBor-active");
+					t1 = '正常';
+					$('#mission-id3').children().remove();
+				}
+
+				var temp = `<div class="pl10">
+			                <ul class="clearfix uiTab8 mt10">
+			                    <li class="fl uiTab8-active">` + t1 + `</li>
+			                </ul>
+			                <div class="contractMain mt10" style="display: block;">
+			                    <div class="contractMainHeight thinScroll" id="nsDZRecordThreeText" style="height: 632px;">
+				                    <form id="mission-form" >
+				                    	<div class="analyItem">
+				                    		<p class="analyItemTit tx-center">` + t1 + `</p>
+				                    		<div class="analyItemCon clearfix">
+				                    				<input type="hidden" name="campId" id="campId" value=` + campId + ` />
+				                    				<input type="hidden" name="type" id="type" value=` + type + ` />
+				                    				<p class="fl col-md-5"><span class="cLightGray pr8">
+				                    					</span>日期 :&nbsp;<span class="cRed">` + ddtime + `</span>
+				                    				</p>
+				                    				 <div class="col-md-7">
+												    	<input name ="access" value="1" ` + s + ` type="radio"/>是</input>
+												    	<input name ="access"  value="0" ` + s1 + ` type="radio" />否</input>
+													</div>
+													<p class="col-md-12"><textarea style="width:90%;" name="remark" rows="" cols="">`+remark+`</textarea></p>
+				                    		</div>
+				                    	</div>
+				                    	<div class="tx-center mt20">    
+				                    		<input type="button" id="mission_button" value="确定" class="uiBtn-normal uiBtn-blue btnSureAlertNSRecord ">
+				                    	</div>
+			                    	</form>
+			                    </div>
+			                </div>`;
+
+				$('#mission-id3').append(temp);
+
+				jQuery(document).ready(function() {
+					jQuery('#mission-form').bind("submit", function() {
+						//	var key_word = jQuery("#keyword").val();
+						//	if(key_word == "") {
+						//	return true;
+						//	}
+						var options = {
+							url: 'http://api.idc.com/tobedone/modify',
+//							url: 'http://localhost:13201/tobedone/modify',
+							type: 'post',
+							dataType: 'text',
+							data: $("#mission-form").serialize(),
+							success: function() {
+								//关闭三段
+								$(".cl-no").parents(".cen-slid").stop().animate({"left": "-100%","opacity": "0"}, 500);
+								$(".analyItem").removeClass("anItemBor-active");
+								//关闭三段
+//								$(".cen-slid3").css("left","-100%");
+								if(type == 1){
+									$("tr[class=tractive] td").eq(2).text("数");
+								}
+								if(type == 2){
+									$("tr[class=tractive] td").eq(2).text("正");
+								}
+								if(type == 3){
+									$("tr[class=tractive] td").eq(2).text("完");
+									$("tr[class=tractive] td").eq(2).attr("class","cGreen");
+									$("tr[class=tractive] td").eq(3).text("完");
+									$("tr[class=tractive] td").eq(3).attr("class","cGreen");
+								}
+//								location.reload();
+								misson(campId);
+								//alert('保存成功');
+							}
+						};
+						$.ajax(options);
+						return false;
+					})
+					
+					$('#mission_button').click(function() {
+						$('#mission-form').submit();
+					})
+				});
+				
+			}
+
+			//使命 --池子信息加载-=-二段
+			function misson(campId) {
+				var temp_dai = `<div class="circlemark_box">
+									<a href="javascript:" class="circlemark circlemark-purple">待</a>
+									<a href="javascript:" class="circlemark DataEvaluation2 circlemark-lightRed">未</a>
+								</div>`;
+				var temp_wan = `<div class="">
+								  	<span href="javascript:" class="circlemark-green circlemark">完</span>
+							    </div>`;
+				var mission_stuats = `<a href="javascript:" class="circlemark-lightRed showstips dis-il-block fr">未</a>
+									  <a href="javascript:" class="circlemark-purple showstips dis-il-block fr">待</a>`;
+				$.get("http://api.idc.com/tobedone/find", {
+//				$.get("http://localhost:13201/tobedone/find", {
+					'campId': campId
+				}, function(data) {
+//					console.info(data);
+					//使命-状态
+					if(data.status){
+						mission_stuats = temp_wan;
+					}
+					var temp = '<div class="uiTab9Con mission-list misson-status" >' +
+						'<div class="analyItem">' +
+						'<p class="analyItemTit tx-center">状态</p>' +
+						'<div class="analyItemCon">' +
+						'<p class="fl col-md-4">' +
+						'<b class="col-md-4 cGreen fz14">正常</b>' +
+						'</p>' +
+						mission_stuats +
+						'</div>' +
+						'</div>' +
+						'</div>';
+					$(".misson-status").remove();
+					$("#mission-id").before(temp);
+
+					var t1 = '';
+					var t11 = '否';
+					var class1 = "cRed";
+					var class11 = "";
+					if(data.access == '0') {
+						t1 = temp_dai;
+						class11 = "cRed"
+					} else {
+						class1 = "cGreen";
+						t11 = '是';
+						t1 = temp_wan;
+					}
+					var t2 = '';
+					var t22 = '否';
+					var class2 = "cRed";
+					var class22 = "";
+					if(data.haveData == '0') {
+						t2 = temp_dai;
+						class22 = "cRed"
+					} else {
+						class2 = "cGreen";
+						t22 = '是';
+						t2 = temp_wan;
+					}
+
+					var t3 = '';
+					var t33 = '否';
+					var class3 = "cRed";
+					var class33 = "";
+					if(data.normal == '0') {
+						t3 = temp_dai;
+						class33 = "cRed"
+					} else {
+						class3 = "cGreen";
+						t33 = '是';
+						t3 = temp_wan;
+					}
+
+					var temp2 = `<div class="analyItem anItemBor restart"  onclick="show3(` + data.campId + `, 1,` + data.access + `,'` + data.accessTime + `','`+data.accessRemark+`')">
+                			<p class="analyItemTit tx-center">接入</p>
+                            <div class="analyItemCon">
+                                <div>
+                                    <p class="fl col-md-3"><span class="cLightGray pr8">接入 :</span><span  class="`+class1+`">` + t11 + `</span></p>
+                                    <p class="fl col-md-6"><span class="cLightGray pr8">日期  :</span><span >` + data.accessTime + `</span></p>
+                                    <p class="pr10 col-md-10 `+class11+`">`+ data.accessRemark+`</p>
+                                	` + t1 + `
+                                </div>
+                            </div>
+	                    </div>
+	                    <div class="analyItem anItemBor restart"  onclick="show3(` + data.campId + `,2,` + data.haveData + `,'` + data.haveDataTime + `','`+data.haveDataRemark+`')">
+                			<p class="analyItemTit tx-center">数据</p>
+                            <div class="analyItemCon">
+                                <div>
+                                    <p class="fl col-md-3"><span class="cLightGray pr8">数据 :</span><span  class="`+class2+`">` + t22 + `</span></p>
+                                    <p class="fl col-md-6"><span class="cLightGray pr8">日期 :</span><span >` + data.haveDataTime + `</span></p>
+                                	<p class="col-md-10 `+class22+`" >`+ data.haveDataRemark +`</p>
+                                	` + t2 + `
+                                </div>
+                            </div>
+	                    </div>
+                        <div class="analyItem anItemBor restart"  onclick="show3(` + data.campId + `,3,` + data.normal + `,'` + data.normalTime + `','`+data.normalRemark+`')">
+                			<p class="analyItemTit tx-center">正常</p>
+                            <div class="analyItemCon">
+                                <div>
+                                    <p class="fl col-md-3"><span class="cLightGray pr8">正常 :</span><span class="`+class3+`">` + t33 + `</span></p>
+                                    <p class="fl col-md-6"><span class="cLightGray pr8">日期 :</span><span>` + data.normalTime + `</span></p>
+                                	<p class="col-md-10 `+class33+`">`+ data.normalRemark +`</p>
+                                	` + t3 + `
+                                </div>
+                            </div>
+	                    </div>`;
+					$('.restart').remove();
+					$("#mission-id").after(temp2);
+				});
+			}
+
+
+            VM["datapoolDealWeek"] = ko.observableArray([]);
+            VM["datapoolDealWeekSum"] = ko.observable();
+            VM["datapoolDealMonthSum"] = ko.observable();
+		</script>
+	</body>
+
+</html>

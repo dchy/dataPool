@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据池子综合表格</title>
+    <!--保证IE浏览器以最高版本运行-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--公共样式-->
+    <link rel="stylesheet" href="./css/rxui1.0.2.min.css" />
+    <link rel="stylesheet" href="./css/page-threecolumn.css" />
+    <link rel="stylesheet" href="./css/frame.css" />
+    <link rel="stylesheet" href="./css/layer.css" />
+</head>
+<style type="text/css">
+    /*滚动条样式*//*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+    .thinScroll::-webkit-scrollbar {width: 1px;height: 10px;}
+    /*定义滚动条轨道 内阴影+圆角*/
+    .thinScroll::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);border-radius: 1px;
+        background: rgba(0, 0, 0, 0.1); }
+    /*定义滑块 内阴影+圆角*/
+    .thinScroll::-webkit-scrollbar-thumb {border-radius: 1px;-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 0.1); }
+    .thinScroll::-webkit-scrollbar-thumb:hover {border-radius: 1px;-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 0.1); }
+
+    .uiTab3-actives{
+        background-color: white;
+        color: black;
+    }
+    .uiTab3-active{
+        background-color: #0099ff;
+        color: white;
+    }
+    tab-ul{
+        width:100%;}
+    .tab-ul li{
+        float: left;border: 1px solid;}
+    .tab-ul p{float: left;border: 1px solid;
+        }
+
+
+
+    .oneParagraph{
+        background-color: #eaf4fe;
+    }
+    .headBackground{
+        background-color: #ddd;
+    }
+</style>
+<body class="ml10">
+
+<div class="Personal_side relative" id="Personal_side">
+
+    <!--<div class="personal_p20 clearfix pa20 relative mr20 " id="main-container" style="border: 1px solid #33adff;margin-top: 15px;background: #fff;">-->
+    <div class="personal_p20 clearfix pt10 pl5 relative " id="main-container" >
+        <!--<img src="images/sanjiao.png" height="23" width="27" style="position: absolute;top:-17px;right: 50px;width: 20px;height: 18px;"/>-->
+        <i class="person_eventicon"></i>
+        <!--列表-->
+
+
+        <div class="SortDivTop">
+            <ul class="clearfix uiTab3"  style="float: left;" >
+                <li>
+                    <a href="javascript:;" onclick="clicks(this)"  id ="d1">本周数据</a>
+                </li>
+                <li>
+                    <a href="javascript:;" onclick="clicks(this)" id="d2">前两周数据</a>
+                </li>
+            </ul>
+            <!--//data-bind="options:division,optionsText:'stName',optionsValue:'id',optionsCaption:'地区'"-->
+            <div class="fr hide" style="float: right; margin-right: 90px;">
+                <select class="fl mr5 cursor" id="areaId" onchange="changeArea()"  name = "">
+                    <option value="39">集团</option>
+                    <option value="11">R6</option>
+                    <option value="12">北京</option>
+                    <option value="15">南京</option>
+                    <option value="16">合肥</option>
+                    <option value="18">武汉</option>
+                    <option value="19">天津</option>
+                    <option value="20">郑州</option>
+                    <option value="21">重庆</option>
+                    <option value="22">成都</option>
+                    <option value="25">西安</option>
+                    <option value="26">杭州</option>
+                    <option value="30">济南</option>
+                    <option value="31">石家庄</option>
+                    <option value="36">宁波</option>
+                    <option value="38">上海</option>
+                    <option value="49">望京</option>
+                    <option value="50">亦庄</option>
+                    <option value="55">CBD</option>
+                </select>
+                <select class="fl mr5 cursor" id="divisionId"  data-bind="options:division,optionsText:'stName',optionsValue:'id',optionsCaption:'师级'"  name = "">
+                </select>
+
+                <select class="fl mr5 cursor" id="corpsId"  data-bind="options:corps,optionsText:'stName',optionsValue:'id',optionsCaption:'团级'"  name="">
+                </select>
+            </div>
+        </div>
+
+
+        <div class="tableClass" style="margin-top: 40px;">
+            <div style="padding-right: 10px;">
+                <table class="uiTable" >
+                    <thead class="THeader1">
+                    <tr>
+                        <th width="7%" class="title1 hide" data-order="0" rowspan="2">
+                            <div class="thSortBox">
+                                <span>岗位</span>
+                            </div>
+                        </th>
+                        <th width="7%" class="title2 hide" data-order="0" rowspan="2">
+                            <div class="thSortBox">
+                                <!--<span>岗位</span>-->
+                                <select class="theadselect " id="battalionId"  data-bind="options:battalion,optionsText:'stName',optionsValue:'id',optionsCaption:'岗位'" >
+                                </select>
+                            </div>
+                        </th>
+                        <th width=7%" data-order="0" rowspan="2">
+                            <div class="thSortBox">
+                                <span>日期</span>
+                            </div>
+                        </th>
+                        <th width=6%" data-order="0" rowspan="2">
+                            <div class="thSortBox">
+                                <span>人员</span>
+                            </div>
+                        </th>
+                        <th width="52%" data-order="0" colspan="8">
+                            <div class="thSortBox">
+                                <span>一段</span>
+                            </div>
+                        </th>
+
+                        <th width="28%" data-order="0" colspan="4">
+                            <div class="thSortBox">
+                                <span>二段</span>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th width="7%" class="title1 hide" data-order="0">
+                            <div class="thSortBox">
+                                <span>版块</span>
+                            </div>
+                        </th>
+                        <th width="7%" class="title2 hide" data-order="0">
+                            <div class="thSortBox">
+                                <select class="theadselect " id="orumId" data-bind="options:orum,optionsText:'name',optionsValue:'markId',optionsCaption:'版块'">
+                                </select>
+                            </div>
+                        </th>
+                        <th width="6%" data-order="0">
+                            <div class="thSortBox">
+                                <span>应（待）</span>
+                            </div>
+                        </th>
+                        <th width="6%" data-order="0">
+                            <div class="thSortBox">
+                                <span>标准待办</span>
+                            </div>
+                        </th>
+
+                        <th width="6%" data-order="0">
+                            <div class="thSortBox">
+                                <span>已办</span>
+                            </div>
+                        </th>
+                        <th width="7%" data-order="0">
+                            <div class="thSortBox">
+                                <span>金额</span>
+                            </div>
+                        </th>
+                        <th width="7%" data-order="0">
+                            <div class="thSortBox">
+                                <span>占比</span>
+                            </div>
+                        </th>
+                        <th width="6%" data-order="0">
+                            <div class="thSortBox">
+                                <span>处理</span>
+                            </div>
+                        </th>
+                        <th width="7%" data-order="0">
+                            <div class="thSortBox">
+                                <span>金额</span>
+                            </div>
+                        </th>
+                        <th width="7%" data-order="0">
+                            <div class="thSortBox">
+                                <span>版块</span>
+                            </div>
+                        </th>
+                        <th width="7%" data-order="0">
+                            <div class="thSortBox">
+                                <span>标准待办</span>
+                            </div>
+                        </th>
+                        <th width="7%" data-order="0">
+                            <div class="thSortBox">
+                                <span>已办</span>
+                            </div>
+                        </th>
+                        <th width="7%" data-order="0">
+                            <div class="thSortBox">
+                                <span>占比</span>
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th width="7%" data-order="0">统计</th>
+                        <th width="7%" data-order="0">--</th>
+                        <th width="6%" data-order="0">--</th>
+                        <th width="7%" data-order="0">--</th>
+                        <th width="6%"   data-order="0">--</th>
+                        <th width="6%"   data-order="0">--</th>
+                        <th width="6%" id="businessDoneSum"  data-order="0">--</th>
+                        <th width="7%" id="moneySum"  data-order="0">--</th>
+                        <th width="7%"   data-order="0">--</th>
+                        <th width="6%"   data-order="0">--</th>
+                        <th width="7%" id="dealMoneySum" data-order="0">--</th>
+                        <th width="7%" data-order="0">--</th>
+                        <th width="7%" data-order="0">--</th>
+                        <th width="7%" data-order="0">--</th>
+                        <th width="7%" data-order="0">--</th>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="list-TableScro" style="overflow-y: auto;">
+                    <table class="uiTable list-TableScroTbody">
+                        <tbody class="showProject">
+                        <!-- ko foreach: datapool -->
+                        <tr>
+                            <td width="7%"  data-bind="text:campName,attr:{rowspan:businessPoolList.length+businessPoolList.length*businessPoolList[0].platePoolList.length+1}"></td>
+                            <td width="7%" data-bind="text:changeDate(campDate),attr:{rowspan:businessPoolList.length+businessPoolList.length*businessPoolList[0].platePoolList.length+1}"></td>
+                            <td width="6%" data-bind="text:name,attr:{rowspan:businessPoolList.length+businessPoolList.length*businessPoolList[0].platePoolList.length+1}"></td>
+                        </tr>
+                        <!--ko foreach : businessPoolList -->
+                        <tr>
+                            <td  width="7%" class="oneParagraph" data-bind="text:businessName,attr:{rowspan:platePoolList.length+1}"></td>
+                            <td  width="6%" class="oneParagraph" data-bind="text:businessShould,attr:{rowspan:platePoolList.length+1}"></td>
+                            <td  width="6%" class="oneParagraph" data-bind="text:businessStandard,attr:{rowspan:platePoolList.length+1}"></td>
+                            <td  width="6%" class="oneParagraph" data-bind="text:businessDone,attr:{rowspan:platePoolList.length+1}"></td>
+                            <td  width="7%" class="oneParagraph" data-bind="text:money,attr:{rowspan:platePoolList.length+1}"></td>
+                            <td  width="7%" class="oneParagraph" data-bind="text:changeType(businessProportion),attr:{rowspan:platePoolList.length+1}"></td>
+                            <td  width="6%" class="oneParagraph" data-bind="text:businessDeal,attr:{rowspan:platePoolList.length+1}"></td>
+                            <td  width="7%" class="oneParagraph" data-bind="text:dealMoney,attr:{rowspan:platePoolList.length+1}"></td>
+                        </tr>
+                        <!--ko foreach : platePoolList -->
+                        <tr>
+                            <td  width="7%" data-bind="text:changeNull(plateName)"></td>
+                            <td width="7%"  data-bind="text:changeNull(plateStandard)"></td>
+                            <td width="7%"  data-bind="text:changeNull(plateDone)"></td>
+                            <td width="7%"  data-bind="text:changeType(plateProportion)"></td>
+                        </tr>
+                        <!-- /ko -->
+                        <!-- /ko -->
+                        <!-- /ko -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="./js/jquery-1.11.3.min.js"></script>
+<script src="./js/knockout/dist/knockout.js"></script>
+<script src="./js/rxuedv2.0.min.js"></script>
+<script type="text/javascript">
+
+    $(".list-TableScro").height(470).slimScroll({
+        height: 470,
+        borderRadius: "0px"
+    });
+
+    //获取创过来的参数
+    function parseUrl(){
+        var url=location.href;
+        var i=url.indexOf('?');
+        if(i==-1)return;
+        var querystr=url.substr(i+1);
+        var arr1=querystr.split('&');
+        var arr2=new Object();
+        for  (i in arr1){
+            var ta=arr1[i].split('=');
+            arr2[ta[0]]=ta[1];
+        }
+        return arr2;
+    }
+    var v = parseUrl();//解析所有参数
+//    alert(v['campId']);//就是你要的结果
+
+    var campId = v['campId'];
+    var region = v['region'];
+    var cardNumber = v['cardNumber'];
+//    alert(region);
+//    alert(cardNumber);
+    var dataDate = "";
+    var businessName = "";
+    var plateName = "";
+    var VM = {};
+    $(function () {
+        //数据绑定
+        ko.applyBindings(VM);
+
+        $("#d1").addClass("uiTab3-active");
+        $("#d2").addClass("uiTab3-actives");
+        clicks("1");
+
+
+        haveDivision(1);
+        haveCorps(0);
+        haveBattalion(0);
+        haveOrum(0);
+
+        VM.corps(undefined);
+        VM.battalion(undefined);
+        VM.orum(undefined);
+
+        if(campId<=0){
+            $(".list-TableScro").height(470);
+            $(".fr").show();
+            $(".title2").show();
+        }else{
+            $(".title1").show();
+        }
+    })
+
+    function clicks(data) {
+        var id = $(data).attr("id");
+        if(id=="d2"){
+            $("#d1").removeClass("uiTab3-active");
+            $("#d2").removeClass("uiTab3-actives");
+            $("#d2").addClass("uiTab3-active");
+            $("#d1").addClass("uiTab3-actives");
+            dataDate = "2";
+            $(".StatiscsLeft ul li:first").click();
+        }else if(id=="d1"){
+            $("#d2").removeClass("uiTab3-active");
+            $("#d1").removeClass("uiTab3-actives");
+            $("#d1").addClass("uiTab3-active");
+            $("#d2").addClass("uiTab3-actives");
+            dataDate = "1";
+        }
+        businessName = "";
+        plateName = "";
+//        getData(campId,businessName,plateName,dataDate);
+//        changedivision();
+
+        //师
+        var fatherId = $("#divisionId").val();
+        if(fatherId!="" && fatherId!=null&&fatherId!=undefined){
+
+        }else{
+            fatherId= "0";
+        }
+        //团
+        var corpsId = $("#corpsId").val();
+        if(corpsId!="" && corpsId!=null&&corpsId!=undefined){
+
+        }else{
+            corpsId = "0";
+        }
+        //营
+        var battalionId = $("#battalionId").val();
+        if(battalionId!="" && battalionId!=null&&battalionId!=undefined){
+
+        }else{
+            battalionId= "0";
+        }
+        //版块
+        var orumId = $("#orumId").val();
+        if(orumId!="" && orumId!=null&&orumId!=undefined){
+
+        }else{
+            orumId = "0";
+        }
+        haveData(fatherId,corpsId,campId,orumId,dataDate);
+    }
+
+
+    //地区change事件
+    function changeArea() {
+       region = $("#areaId").val();
+       var sid = $("#divisionId").val();
+       if(sid =="" || sid ==null || sid ==undefined){
+            sid = 0;
+       }
+        var tid = $("#corpsId").val();
+        if(tid =="" || tid ==null || tid ==undefined){
+           tid = 0;
+       }
+        haveData(sid,tid,0,0,dataDate);
+    }
+    function changedivision() {
+                $("#corpsId").unbind("change");
+                var fatherId = $("#divisionId").val();
+                if(fatherId!="" && fatherId!=null&&fatherId!=undefined){
+                    haveCorps(fatherId);
+                    haveData(fatherId,0,campId,0,dataDate);
+                }else{
+                    haveCorps(0);
+                    haveData(0,0,campId,0,dataDate);
+                }
+    }
+
+    //团级change事件
+    function changecorps() {
+        $("#battalionId").unbind("change");
+            var fatherId = $("#corpsId").val();
+            var sid = $("#divisionId").val();
+            if(fatherId!="" && fatherId!=null&&fatherId!=undefined){
+                haveBattalion(fatherId);
+                haveData(sid,fatherId,campId,0,dataDate);
+            }else{
+                haveBattalion(0);
+                haveData(sid,0,campId,0,dataDate);
+            }
+
+    }
+
+    //营级change事件
+    function changebattalion() {
+//        debugger
+        $("#orumId").unbind("change");
+            var tid = $("#corpsId").val();
+            var sid = $("#divisionId").val();
+            var fatherId = $("#battalionId").val();
+            if(fatherId!="" && fatherId!=null&&fatherId!=undefined){
+                haveOrum(fatherId);
+                haveData(sid,tid,fatherId,0,dataDate);
+            }else{
+                haveOrum(0);
+                haveData(sid,tid,0,0,dataDate);
+            }
+
+    }
+
+    //版块change事件
+    function changeorum() {
+//        debugger
+            var tid = $("#corpsId").val();
+            var sid = $("#divisionId").val();
+            var yid = $("#battalionId").val();
+            var fatherId = $("#orumId").val();
+            if(fatherId!="" && fatherId!=null&&fatherId!=undefined){
+                haveData(sid,tid,yid,fatherId,dataDate);
+            }else{
+                haveData(sid,tid,yid,0,dataDate);
+            }
+
+    }
+
+    //获取展示内容
+    function haveData(sid,tid,campId,markId,dataDate) {
+        $.get("http://192.168.1.191:13201/command/dpTableTwo",{sid:sid,tid:tid,markId:markId,"campId":campId,"dataDate":dataDate,"region":region,"cardNumber":cardNumber}, function (data) {
+            VM.datapool(undefined);
+            VM.datapool(data);
+
+            var  dealMoneySum = 0;
+            var  moneySum = 0 ;
+            var  businessDoneSum = 0;
+            $.each(data,function(name,value) {
+                dealMoneySum += value.dealMoneySum*1000;
+                moneySum += value.moneySum*1000;
+                businessDoneSum += value.businessDoneSum;
+            });
+            $('#moneySum').text(moneySum/100);
+            $('#dealMoneySum').text(dealMoneySum/100);
+            $('#businessDoneSum').text(businessDoneSum);
+        },"json");
+    }
+
+    //获取师级内容
+    function haveDivision(divisionId) {
+
+        $.get("http://192.168.1.191:13201/command/searchDepartmentInfo",{"levelId":1,"fatherId":divisionId}, function (data) {
+            VM.division(undefined);
+            VM.division(data);
+            $("#divisionId").change(function () {
+                changedivision();
+            });
+        },"json");
+    }
+
+    //获取团级内容
+    function haveCorps(corpsId) {
+        $("#corpsId").unbind("change");
+        $.get("http://192.168.1.191:13201/command/searchDepartmentInfo",{"levelId":2,"fatherId":corpsId}, function (data) {
+            VM.corps(undefined);
+            VM.corps(data);
+            $("#corpsId").change(function () {
+                changecorps();
+            });
+        },"json");
+    }
+
+    //获取营级内容
+    function haveBattalion(battalionId) {
+        $("#battalionId").unbind("change");
+        $.get("http://192.168.1.191:13201/command/searchDepartmentInfo",{"levelId":3,"fatherId":battalionId}, function (data) {
+            VM.battalion(undefined);
+            VM.battalion(data);
+            $("#battalionId").change(function () {
+                changebattalion();
+            });
+        },"json");
+    }
+
+    //获取版块内容
+    function haveOrum(orumId) {
+        $("#orumId").unbind("change");
+        $.get("http://192.168.1.191:13201/command/searchMarkOfCampId",{"campId":orumId}, function (data) {
+            VM.orum(undefined);
+            VM.orum(data);
+            $("#orumId").change(function () {
+                changeorum();
+            });
+        },"json");
+    }
+
+
+
+    function getData(campId,businessName,plateName,dataDate) {
+        $.get("http://api.idc.com/command/dpTable",{"campId":campId,"businessName":businessName,"plateName":plateName,"dataDate":dataDate}, function (data) {
+
+            VM.datapool(undefined);
+            VM.datapool(data);
+        },"json");
+    }
+
+    function changeNull(data) {
+        if(data==null || data==undefined){
+            data = "--";
+        }
+        return data;
+    }
+
+    function changeType(data) {
+
+        if(data==null || data==undefined){
+            return "--";
+        }else{
+            return data+"%";
+        }
+    }
+
+    function changeDate(data) {
+       return data.substring(0,10);
+    }
+
+    VM["datapool"] = ko.observableArray([]);
+    VM["division"] = ko.observableArray([]);    //师级
+    VM["corps"] = ko.observableArray([]);    //团级
+    VM["battalion"] = ko.observableArray([]);    //营级
+    VM["orum"] = ko.observableArray([]);    //版块
+
+</script>
+</body>
+</html>

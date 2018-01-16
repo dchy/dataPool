@@ -1,0 +1,132 @@
+﻿@charset "utf-8";
+.mb15{ margin-bottom: 15px;}
+.bgcfff{ background-color: #fff;}
+.width70{ width: 70px;}
+.width85{ width: 85px;}
+.width213{ width: 213px;}
+.width130{ width: 130px;}
+.width270{ width: 270px;}
+.mt7{ margin-top: 7px;}
+.dailylft_title .uiTab1 li{ width: 33.3%; margin-right: 0px; text-align: center;}
+.dailylftScroll .dailylft_title4 li{ width:25%; margin-right: 0px; text-align: center;}
+.dailylft_title .uiTab2 li{ width: 25%; margin-right: 0px; text-align: center;}
+.dailySelect{ padding: 0px;}
+.dailySelect select{ width: 50px; height: 36px; background-color: #f4f4f4; padding: 0px;}
+.dailyAddIcon{ font-weight: 700; font-style: normal; font-size: 20px; color: #6699FF; cursor: pointer;}
+.uitabColor_O{ border-left: 3px solid #f89a0e;}
+.uitabColor_G{ border-left: 3px solid #00cc66;}
+.uitabColor_R{ border-left: 3px solid #ff0000;}
+.group-rgt .note-spanRed{ border-color: red; color: red;}
+.noteslist-lft .note-spanGre{ border-color: #00cc66; color: #00cc66;}
+.noteslist-lft .note-spanOr{ border-color: #f89a0e; color: #f89a0e;}
+.dailyrgt-bottomR span{ margin-bottom: 10px;}
+.submissionRight{ width: 30px; position: absolute; top: 0px; right: 0px;}
+.submissionLeft{ margin-right: 30px;}
+.submit_close{ width: 14px; height: 14px; background: url(../images/pic/u20.png) no-repeat; background-size: 14px 14px; display: inline-block; cursor: pointer;}
+.submissionLeft_L{ width: 250px;}
+.submissionLeft_R{ margin-left: 250px;}
+.submit_div{ width: 117px; height: 117px; border: 1px solid #ccc; background: url(../images/pic/bgiconX.png) center no-repeat; cursor: pointer;}
+.submit_divP{ width: 117px; line-height: 30px; text-align: center;}
+.submissionLText textarea{ width: 100%; height: 60px;}
+.problem_alertImg li{ width: 118px; height: 118px; float: left; margin-bottom: 10px; margin-right: 10px; position: relative; border: 1px solid #ccc; overflow: hidden;}
+.problem_alertImg li img{ width: 117px; height: 117px;}
+/**任务操作**/
+.AgencyDivHide{ display: none; width: 100%; background-color: #fff; position: absolute; top: 0px; left: 0px; z-index: 1;}
+.AgencyDivClose{ width: 14px; height: 14px; background: url(../images/pic/u20.png) no-repeat; background-size: 14px 14px; display: inline-block; cursor: pointer;}
+.AgencyDivmainDivTex textarea{ width: 100%; height: 80px;}
+/**发布任务**/
+.ReleaseDivHide{ display: none; width: 100%; background-color: #fff; position: absolute; top: 0px; left: 0px; z-index: 1;}
+.ReleaseDivClose{ width: 14px; height: 14px; background: url(../images/pic/u20.png) no-repeat; background-size: 14px 14px; display: inline-block; cursor: pointer;}
+.ReleasSpanW{ width: 60px; display: inline-block; text-align: right;}
+.ReleaseDivmainDivInput input{ border: none;}
+.ReleaseDivmainDivText textarea{ width: 80%; height: 80px; border: none;}
+.ReleaseDivmainDivText label{ vertical-align: top; margin-top: 4px;}
+/**任务添加**/
+.daily_taskAddDiv{ display: block; position: absolute; top: -100%; left: 0px; z-index: 10; background-color: #fff;}
+.daily_taskAddDivY{ width:100%; position: absolute; top: 0px; left: 0px; z-index: 10; background-color: #fff;}
+.daily_taskAddDivL{ width: 460px; border-right: 5px solid #f1f1f1;}
+.daily_taskAddDivR{ margin-left: 460px;}
+.taskAddText textarea{ width: 100%; height: 70px; border: none;}
+.task_AddIcon{ width: 15px; height: 15px; background: url(../images/pic/u1110.png) no-repeat; background-size: 15px 15px; display: inline-block; cursor: pointer; margin-top: 7px;}
+.taskAddDivK{ border-bottom: 1px dotted #ccc; padding-bottom: 20px;}
+.taskAddDivOne{ height: 230px;}
+.biaozhunText textarea{ width: 100%; height: 70px; border: none;}
+.daily_taskAddDivY .analyItem{ width:460px; margin-right:10px;}
+
+/**系统添加**/
+.analy_Systempost li{ width: 58px; height: 30px; line-height: 30px; margin-right: 10px; background-color: #f2f2f2; float: left; text-align: center;}
+.analy_Systempost .system_xuan{ border: 1px solid #6699ff; color: #6699ff; background-color: #fff;}
+.analy_Systempost .system_Lack,.postDivHideli .system_Lack{ border: 1px solid red; color: red; background-color: #fff;}
+.tabSystemTime{ width: 20px; height: 20px; background: url(../images/pic/u636.png) no-repeat; display: inline-block; background-size: 20px 20px; cursor: pointer; position: absolute; top: -2px; left: 35px;}
+.tabSystemTimeDiv{ background-color: #f4f4f4; position: absolute; top: 0px; left: 0px; z-index: 1;}
+.tabSystemTimeDiv .inputW{ width: 162px; margin-top: 5px;}
+.tabSystem_input{ display: none;}
+.daily_SystemAddDiv{ display: none; margin-left: 275px;}
+.taskAddpost_DivLi li{ width: 75px; height: 30px; float: left; margin-bottom: 10px; margin-right: 10px; line-height: 30px; text-align: center; background-color: #f2f2f2; cursor: pointer;}
+.taskAddpost_DivLi .taskAddpostli_cur{ background-color: #fff; border: 1px solid #6699ff; color: #6699ff;}
+.postDivHide{ display: none; width: 100%; background-color: #fff; position: absolute; top: 0px; left: 0px; z-index: 1;}
+.post_message{ line-height: 20px;}
+.post_icon{ width: 15px; height: 15px; margin-top: 2px; background: url(../images/pic/u999.png) no-repeat; display: inline-block; background-size: 15px 15px;}
+.postDivHideli li{ width: 70px; height: 30px; line-height: 30px; background-color: #f2f2f2; float: left; margin-right: 10px; margin-bottom: 10px; text-align: center; cursor: pointer;}
+.postDivHideli .postDivHideli_cur{ background-color: #fff; border: 1px solid #6699ff; color: #6699ff;}
+
+
+/**标准**/
+.WebsiteDiv{ height: 24px; line-height: 24px; padding: 0px 5px; border: 1px solid #ccc; border-radius: 3px;}
+.Frequency_uiTab7Con{ width: 99%; display: none; position: absolute; top: 0px; left: 0px; background-color: #fff;}
+.Frequency_uiTab7ConH select{ padding: 4px 4px;}
+
+
+
+/**UED   任务**/
+.Visit_uitab{ width: 15px; height: 15px; line-height: 15px; font-size: 12px; background-color: red; color: #fff; border-radius: 100px; display: inline-block; position: absolute; top: 3px; right: 0px;}
+.taskAddDivTwoHe textarea{ width: 100%; height: 90px;}
+.excellent_Btn{ width: 25px; height: 25px; background: url(../images/pic/u100-01.png) no-repeat; display: inline-block; position: absolute; top: 28px; right: 22px;}
+
+/**压缩包**/
+.biaozhunUpl img{ 
+    width:40px;
+    height:40px;
+}
+ 
+/**上传文件**/
+.daily_standardImgDiv{ width:60px;}
+.daily_standardImgDiv img{ width:40px; height:40px;}
+.daily_standardImgDivR{ margin-left:60px;}
+
+.col-md-name span{ width:25%; display:inline-block}
+
+/**2017-08-09**/
+.taskDetails-Hide,.Check_acceptanceHide {
+    width: 100%;
+    position: absolute;
+    top: 32px;
+    left: 0px;
+    background-color: #fff;
+    z-index: 2;
+}
+.taskDetailsHeight-bottom textarea {
+    width: 100%;
+    height: 150px;
+}
+.taskDetailsHeight-top{ border-bottom: 1px solid #ededed;}
+
+.lh25{ line-height: 25px;}
+.taskDetails-click{ cursor: pointer;}
+.taskDetails-Hide{ width: 100%; position: absolute; top: 32px; left: 0px; background-color: #fff;}
+.taskDetails-close,.add-messageClose,.Submit-close{ width: 18px; height: 18px; background: url(../images/pic/close_icon.png) no-repeat; background-size: 18px 18px; display: inline-block; cursor: pointer;}
+.taskDetailsHeight-top{ border-bottom: 1px solid #ededed;}
+.Compression-packDiv{ overflow: hidden;}
+.Compression-packDivL{ width: 60px;}
+.Compression-packDivR{ margin-left: 60px;}
+.Compression-packDiv img{ width: 50px; height: 50px; display: inline-block;}
+/*.Compression-Left{ width: 65px;}
+.Compression-packDiv{ margin-left: 65px;}*/
+.textW365{ width: 365px;}
+.textH100{ height: 100px;}
+.taskDetailsHeight-bottom textarea{ width: 100%; height: 150px;}
+.Transfer-task-Hide{ width: 100%; position: absolute; top: 32px; left: 0px; background-color: #fff;}
+.Submit-Hide{ width: 100%; position: absolute; top: 32px; left: 0px; background-color: #fff; z-index:2;}
+.Connect-input input{ width: 87%;}
+.Connect-text textarea{ width: 87%;}
+.text-width textarea{ width:100%}

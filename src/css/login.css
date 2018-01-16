@@ -1,0 +1,28 @@
+@charset "utf-8";
+body,html{background:#EDF0F1; font-family:"微软雅黑"; overflow:hidden; width:100%; height:100%;}
+.fx_setbox{width:480px; height:444px; position:absolute; left:50%; top:50%; margin-left:-240px; margin-top:-222px; }
+.fx_boxcnt{width:100%; height:100%; position:relative;}
+.fx_boxcnt_bt{width:100%; height:50%; background:#009688; position:absolute; left:0; bottom:0;}
+.fx_additional-info{padding:185px 0 0 175px; color:#fff; font-size:16px; font-weight: 600;}
+.fx_additional-info a{color:#fff; font-size:12px; font-family:"微软雅黑"; text-align:center; line-height:12px;}
+.fx_divider-h{border-right:1px solid #fafafa; margin: 0 12px;display:inline-block; width:0; height:15px; font-size:12px; text-indent:-999em;}
+.fx_logbox{width:400px; height:296px; background:#fff; position:absolute; left:20px; top:20px; border-radius:3px; border:1px solid #dfdfdf;
+ box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); padding:30px 20px;}
+ .fx_logbox h2{color:#009688; font-size:30px; font-weight:normal; text-align:center; margin-top:18px; margin-bottom:40px;}
+ .fx_logbox h2 a{color:#009688; text-align:center;}
+ .fx_form-group{width:100%; height:38px; margin:18px 0 12px; position:relative;}
+ .fx_ui-input-group{width:100%; height:38px; position:relative; margin:26px 5px;}
+ .fx_form-group input{border:none; border-bottom:1px solid #CBD5DD; display:block; width:100%; height:38px; line-height:38px; outline:none; font-size:14px;}
+ .fx_form-group label{position:absolute; top:10px; left:0; color:#CBD5DD; height:38px; font-size:14px;}
+ .fx_color-primary{color:#009688;}
+ .fx_text-right{width:400px; position:absolute; bottom:30px;}
+ .fx_text-right a{font-size:14px; }
+ .fx_text-right a.fx_color-pl{float:left; color:#009688; line-height:30px;}
+ .fx_text-right a.fx_color-pr{float:right; padding:5px 15px; color:#fff; background:#009688; border-radius:5px; line-height:20px; cursor:pointer;}
+ a.fx_color-pr:hover{background:#01AE9E;}
+ .fx_text-right:hover{text-decoration:underline;}
+ .fx_input-bar{width:100%; height:0; position:absolute; left:0; top:37px; border-bottom:2px solid #009688; -webkit-transform:scaleX(0);}
+ .style1{border-bottom:2px solid #009688;-webkit-transform:scaleX(1);-webkit-transition:all 0.5s ease;}
+.style2{border-bottom:2px solid #009688;-webkit-transform:scaleX(0);-webkit-transition:all 0.5s ease;}
+.fx_chec{vertical-align:middle; margin-right:3px; margin-top:-1px;}
+.fx_ftclor{color:red; font-size:12px; padding-left:5px;}

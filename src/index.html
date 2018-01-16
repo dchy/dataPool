@@ -1,0 +1,678 @@
+﻿<!DOCTYPE html>
+<style>
+    .event-div {
+        float: right;
+        height: 40px;
+        color: #09f;
+        line-height: 40px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    .event-div2 {
+        float: right;
+        height: 40px;
+        color: #09f;
+        line-height: 40px;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    .thb-box {
+        position: absolute;
+        top: 10px;
+        left: 760px;
+        right: 10px;
+        border: 1px solid #09f;
+        padding: 20px;
+        z-index: 10;
+        height: 470px;
+        background: #fff;
+    }
+
+    .CloseDiv {
+        float: right;
+    }
+
+    .if-cs {
+        width: 925px;
+        height: 530px;
+        position: absolute;
+        right: 140px;
+        top: 10px;
+        z-index: 5;
+    }
+
+    .on-zer {
+        padding: 4px 10px;
+        background: #33adff;
+        height: 29px;
+        line-height: 20px;
+        color: #FFF;
+        margin-top: 5px;
+        padding-left: 30px;
+    }
+
+        .on-zer img {
+            position: absolute;
+            top: 6px;
+            left: 9px;
+        }
+
+        .on-zer a {
+            color: #fff;
+            font-weight: 700;
+        }
+</style>
+
+<style>
+    .cen-slid {
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: -100%;
+        background: #fff;
+        opacity: 0;
+    }
+
+        .cen-slid .tc-righttop-tab .cl-no {
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .cen-slid .tc-righttop-tab i {
+            width: 4px;
+            height: 4px;
+            background: #0092FF;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            left: -7px;
+            top: 0px;
+            bottom: 0;
+            margin: auto;
+        }
+
+    .span-a {
+        position: absolute;
+        right: 28px;
+        top: 1px;
+        width: 40px;
+    }
+
+    .apply-cour {
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: -100%;
+        background: #fff;
+        opacity: 0;
+    }
+
+        .apply-cour .tc-righttop-tab .cl-no {
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .apply-cour .tc-righttop-tab i {
+            width: 4px;
+            height: 4px;
+            background: #0092FF;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            left: -7px;
+            top: 0px;
+            bottom: 0;
+            margin: auto;
+        }
+
+    .apply-cour {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0px;
+        background: #fff;
+    }
+
+    .appc-ul li {
+        float: left;
+    }
+
+    .appc-ul span {
+        display: inline-block;
+        width: 65px;
+        line-height: 23px;
+        background: #F6F3F4;
+    }
+
+    .bor-top {
+        border-top: 1px dashed #00CC00;
+    }
+
+    .rig_close {
+        line-height: 18px;
+        font-size: 28px;
+        color: #aeaeae;
+        cursor: pointer;
+    }
+    .if-uiTab1{width:245px;position: absolute;top: 20px;left: 10px;}
+    .wrapper .if-uiTab1 li{width: 25%;margin-right: 0;text-align: center;}
+</style>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!--保证IE浏览器以最高版本运行-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>应用平台</title>
+    <link rel="shortcut icon" href="./images/ico/bitbug_favicon.ico" />
+    <!--公共样式-->
+    <link rel="stylesheet" href="./css/rxui1.0.2.min.css" />
+    <link rel="stylesheet" href="./css/frame.css" />
+    <link rel="stylesheet" type="text/css" href="./css/mend-msg.css" />
+    <link rel="stylesheet" type="text/css" href="./css/page-daily.css" />
+    <link rel="stylesheet" type="text/css" href="./css/CorpsStyle.css" />
+    <link href="./css/KFpage-daily.css" rel="stylesheet" />
+    <link href="./css/deputyArmy.css" rel="stylesheet" />
+    <link href="./css/page-threecolumn.css" rel="stylesheet" />
+    <!--弹框-->
+    <script src="./js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body class="logo-c000000 bar-cffffff nav-black nav-vertical" data-class="nav-vertical">
+    <div id="main_header" class="header-fixed j_outerHeight">
+        <h1 id="logo" class="j_leftnav"><a href="javascript:;"><i></i><span>应用个人端</span></a></h1>
+        <!--顶部导航 开始-->
+        <div id="topnav" class="clear">
+            <ul class="fl" >
+                <li>
+                    <a href="javascript:;" data-rippleria class="setup_nav setupbtn rippleria-dark" num="1">
+                        <i></i>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" data-rippleria class="setup_layout setupbtn rippleria-dark">
+                        <i></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <i class="dropdown-adorn"></i>
+                        <div class="panel-heading">用户选项</div>
+                        <div class="list-group">
+                            <div class="list-group-item">
+                                <p>菜单样式</p>
+                                <div class="radio-group">
+                                    <label class="setup-layout-lable" data-direction="left">
+                                        <input type="radio" name="direction" checked="checked" />左侧
+                                    </label>
+                                    <label class="setup-layout-lable" data-direction="top">
+                                        <input type="radio" name="direction" />上面
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="list-group-item" id="j_fixed_all">
+                                <p>导航样式</p>
+                                <div class="radio-group fixed-check" id="j-fixed-header" data-check="true"><i></i>固定头部</div>
+                                <div class="radio-group fixed-check" id="j-fixed-nav" data-check="true"><i></i>固定导航菜单</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" data-rippleria class="setup_skin setupbtn rippleria-dark">
+                        <i></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <i class="dropdown-adorn"></i>
+                        <div class="panel-heading">颜色应用</div>
+                        <div class="panel-body">
+                            <div class="row clear">
+                                <div class="col-md-4 col-item-header relative fl">
+                                    <span class="skin-item logo-bg-c000000 active"></span>
+                                    <span class="skin-item logo-bg-c009688"></span>
+                                    <span class="skin-item logo-bg-c8bc34a"></span>
+                                    <span class="skin-item logo-bg-c00bcd4"></span>
+                                    <span class="skin-item logo-bg-cffca28"></span>
+                                    <span class="skin-item logo-bg-cf44336"></span>
+                                </div>
+                                <div class="col-md-4 col-item-nav relative fl">
+                                    <span class="skin-item bar-bg-cffffff"></span>
+                                    <span class="skin-item bar-bg-c009688"></span>
+                                    <span class="skin-item bar-bg-c8bc34a"></span>
+                                    <span class="skin-item bar-bg-c00bcd4"></span>
+                                    <span class="skin-item bar-bg-cffca28"></span>
+                                    <span class="skin-item bar-bg-cf44336"></span>
+                                </div>
+                                <div class="col-md-4 col-item-bar relative fl">
+                                    <span class="skin-item header-bg-c000000"></span>
+                                    <span class="skin-item header-bg-c009688"></span>
+                                    <span class="skin-item header-bg-c8bc34a"></span>
+                                    <span class="skin-item header-bg-c00bcd4"></span>
+                                    <span class="skin-item header-bg-cffca28"></span>
+                                    <span class="skin-item header-bg-cf44336"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="user-div">
+                <a href="javascript:;" id="LoginXingming"><i></i>
+                    <span>集团</span>&nbsp;
+                    <span>部门经理 · </span>
+                    <span>刘同 - </span>
+                    <span>00001109</span>
+                </a>
+                
+            </div>
+            <div class="event-div on-zer relative"><img src="./images/1111.png" /><span>事件执行：<a href="javascript:;" id="topNum">0</a></span></div>
+            <div class="event-div2 on-zer relative"><img src="./images/1111.png" /><span id="datapool1"><a href="javascript:;" id="topNum2"></a></span></div>
+        </div>
+        <!--顶部导航 结束-->
+    </div>
+
+    <div id="main_box">
+        <!--主导航 开始-->
+        <div id="nav" class="j_leftnav nav-fixed">
+            <div class="nav-wrapper">
+                <div class="nav-wrapper-content">
+                    <ul class="nav-ul clear">
+                        <!--<li class="military-index"><a href="http://d.p.rx/Manager/Index/PlanView?sys=7" data-rippleria class="rippleria-dark"><em class="small-icon-logo small-icon-num6"></em><strong>师·应用</strong></a></li>-->
+                        <li class="military-index"><a href="#" data-rippleria class="rippleria-dark"><em class="small-icon-logo small-icon-num6"></em><strong>师·应用</strong></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--主导航 结束-->
+
+        <!--内容区 开始-->
+        <div id="main_content" class="relative">
+
+            <div class="wrapper AccordingDiv relative" id="vm_container" v-cloak>
+            	
+                <div class="wrapper clearfix  pr10">
+                	<!--//加载内容主体-->
+                	 <IFRAME id="if-zhi" class="if-scroll" SCROLLING="NO" height="100%" width="100%"  src="./team.html"></IFRAME>
+
+                	<ul class="clearfix uiTab1 if-uiTab1" style="top: 10px;" >
+					    <li >
+					        <!--<a href="http://e.p.rx//EventAdmin/Examine/LocalEventListView?card=00001109&department=10&diqu=39" onclick="function zhi()">执</a>-->
+					        <a href="javascript:;" >执</a>
+					    </li >
+					    <li  class="uiTab1-active">
+					        <a href="javascript:;">应用</a>
+					    </li>
+					    <li>
+					        <a href="javascript:;">团</a>
+					    </li>
+					    <li>
+					        <a href="javascript:;">师</a>
+					    </li>
+					</ul>
+
+                </div>
+            </div>
+
+            <iframe class="if-cs hide"></iframe>
+
+            <div class="closeevent hide" style="font-size:25px;position:absolute;right:170px;top:30px;cursor:pointer;z-index:10001" onclick="closeevent()">×</div>
+        </div>
+    </div>
+
+    <!--编辑弹框-->
+    <div class="contentUp-alert hide">
+        <div class="alertCon plr10 contentUPDiv">
+            <iframe src="" id="alertTextBoxIframe" style="width:100%;height:400px"></iframe>
+        </div>
+        <div class="alertFoot pb10">
+            <div class="dis_il_block">
+                <input type="button" value="提交" data-plate="" id="content_view_submit" class="uiBtn-normal uiBtn-blue">
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/jquery.rippleria.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./js/rxued.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./js/frame.js"></script>
+    <script src="./js/jquery.rotate.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/vue-resource.min.js"></script>
+    <script src="./js/lodash.min.js"></script>
+    <script src="./js/My97DatePicker/WdatePicker.js"></script>
+    <script src="./js/layui-v2.1.1/layui/lay/modules/layer.js"></script>
+    <script src="./components/Manager/index.js"></script>
+
+    <script type="text/javascript">
+        var ifram2='';
+        var event_count=0;
+        function countdaily() {
+            //计算添加宽度
+            $(".daily_taskAddDiv").width($("body").width() - $(".dailylft").width() - 65);
+
+            //左侧
+            $(".dailylft").height($("body").height() - $("#main_header").outerHeight(true) - 20);
+            $(".dailyrgt-left").height($("body").height() - $("#main_header").outerHeight(true) - 20);
+            $(".dailyrgt-right").height($("body").height() - $("#main_header").outerHeight(true) - 25);
+            $(".dailylftScroll").height($(".dailylft").height() - $(".dailylftfoot").outerHeight(true));
+            $(".uiTab1condiv_tbody").height($(".dailylftScroll").height() - $(".dailyLeftNav").height() - $(".daily_title").height() - $(".uiTab1condiv_header").height() - $(".dailylft_title").height() - $(".uiTab1condiv_tfoot").height());
+            $(".PerScroll").height($(".dailylftScroll").height() - $(".dailyLeftNav").height() - $(".daily_title").height() - $(".uiTab1condiv_header").height() - $(".dailylft_title").height() - $(".dailylftfoot").outerHeight(true))
+            //中间
+            $(".uiTab7Con").height($(".dailyrgt-left").height() - $(".Personal_dailyrgt").outerHeight(true));
+            //右侧
+            $(".dailyrgt-top").height($(".dailyrgt-right").height() - $(".dailyrgt-bottom").outerHeight(true) - $(".tc-righttop-tab").height());
+            //信息
+            $(".dailyrgt_information").height($(".dailyrgt-top").height());
+            //回访
+            $(".dailyrgt_Visit").height($(".dailyrgt-top").height());
+
+            //右侧列表
+            $(".projectHide_Conduct").height($(".dailyrgt-right").outerHeight(true) - 30);
+            $(".PH_conductTbody").height($(".projectHide_Conduct").height() - $(".PH_conductHeader").outerHeight() - 30);
+
+            //系统   岗位
+            $(".postDivHide").height($(".dailyrgt-right").height());
+            $(".postDivHideliheihgt").height($(".postDivHide").height() - 85);
+
+            $(".solved_divHideH").height($(".solved_divHide").outerHeight(true) - $(".solved_divHideBottom").outerHeight(true) - 15);
+
+            //分  系统弹框
+            $(".HistoryArmy").height($(".dailyrgt-top").height());
+            $(".HistoryCon").height($(".HistoryArmy").height() - 35);
+
+            //////////////////////////////////////////////////////////////
+            //右侧   事件
+            $(".dailyrgt-evaluation").height($(".dailyrgt-right").outerHeight(true));
+            $(".evaluation_top").height($(".dailyrgt-evaluation").height() - $(".evaluation_bottom").outerHeight(true));
+            $(".visiterecord").height($(".evaluation_top").outerHeight(true));
+            $(".visiterecord-rgt-scroll").height($(".evaluation_top").outerHeight(true) - 20);
+
+
+
+            $(window).resize(function () {
+                countdaily();
+            });
+            if ('@ViewBag.flag' == '1') {
+                $(".dailylftScroll").height($(".dailylft").height() - $(".dailylftfoot").outerHeight(true) - 35);
+                $(".uiTab1condiv_tbody").height($(".dailylftScroll").height() - $(".uiTab1condiv_header").outerHeight() - 30);
+                $(".uiTab1condiv_tbody").slimScroll({ height: $(".uiTab1condiv_tbody").eq(0).height(), borderRadius: "6px" });
+            }
+        }
+
+        $(function () {
+            $(".setup_nav").click(function () {
+                $(".nav-horizontal .more-nav-li").removeClass("open_link");
+                $(".nav-ul .open").removeClass("open");
+                $(".nav-ul li ul").hide();
+                $("body").toggleClass("nav-collapsed-min");
+                if ($(this).attr("num") == "1") {
+
+
+                    $(this).attr("num", "2");
+                    $("#main_content").css("marginLeft", "50px");
+                } else {
+                    $(this).attr("num", "1");
+                    $("#main_content").css("marginLeft", "180px");
+                }
+            })
+            $(".setup_nav").click();
+            //计算高度
+            countdaily();
+            $(".Issue-tasksDivHeight").slimScroll({ height: $(".Issue-tasksDivHeight").height(), borderRadius: "6px" });
+            $(".Issue-tasksTKHide-mainTop").slimScroll({ height: $(".Issue-tasksTKHide-mainTop").height(), borderRadius: "6px" });
+            //代办2
+            $(".dailyrgt-topL .dailyrgt_org").click(function () {
+                if (!$(this).hasClass("solved_cur")) {
+                    $(this).addClass("solved_cur");
+                    $(".solved_divHide").animate({ left: "0px" });
+                    //$(".dailyrgt_VisitDiv").hide();
+
+                    //滚动条
+                    $(".solved_divHide").slimScroll({ height: "100%", borderRadius: "6px" });
+                    countdaily();
+
+                } else {
+                    $(this).removeClass("solved_cur");
+                    $(".solved_divHide").animate({ left: "-200%" });
+                    //$(".dailyrgt_VisitDiv").fadeIn("slow");
+                }
+            });
+            //左侧表格点击
+            $(".dailylft tbody tr").click(function () {
+                $(this).addClass("tractive").siblings().removeClass("tractive");
+            });
+
+            //周考核
+            $(".dailyrgt-bottomR span").click(function () {
+                $(".dailyrgt_person_hide").animate({ right: "0px" })
+            });
+
+            $.get('http://api.idc.com/command/complexTable',{ campId: "-1",region:39,cardNumber:""}, function (res) {
+                debugger
+                $(".if-cs2").attr("src",res.dataURL);
+                ifram2=res.dataURL;
+                $("#datapool1").html(res.name);
+            }, 'json');
+        });
+    
+    
+    
+    </script>
+
+    <script>
+        //下拉不收回处理
+        $(function () {
+            $(".select_clickSpan").click(function () {
+                if (!$(this).hasClass("select-cur")) {
+                    $(this).addClass("select-cur");
+                    $(this).parent().find(".select_clickDiv").show();
+                } else {
+                    $(this).removeClass("select-cur");
+                    $(".select_clickDiv").hide();
+                }
+            })
+            $(".select_clickDiv span").click(function () {
+                $(".select_clickSpan").removeClass("select-cur");
+                $(".select_clickDiv").hide();
+            });
+            //代办 关闭
+            $(".solved_divHide_close").click(function () {
+                $(".solved_divHide").animate({ left: "-200%" });
+            });
+
+            //获取积分
+            $.get('http://d.p.rx/DevelopProject/System/GetPersonalPoints', { params: { monthNum: this.value } }).then(function (res) {
+                $(".point-div a").html(res);
+            }, 'html');
+
+            //积分
+            $(".point-div a").click(function () {
+                $(".thb-box").show();
+                $(".thb-box").stop().animate({
+                    "right": "10px"
+                }, 500);
+            });
+            $(".CloseDiv").click(function () {
+                $(".thb-box").hide();
+                $('.tablecontainer').children().remove();
+            });
+
+            //iframe
+            $(".event-div").click(function () {
+                $(".if-cs").toggleClass("hide");
+                $(".if-cs").attr('src','http://e.p.rx/Event/Launch/IframeZ?card=00001109');
+                $('.closeevent').toggleClass('hide');
+                $(".if-cs").height('530px').width('925px');
+                $('.if-cs').css('background-color','');
+                $('.closeevent').css('right',170);
+                $('.closeevent').css('top',30);
+                $(".if-cs").css('right','140px');
+                if(event_count!=0){
+                    $(".if-cs").toggleClass("hide");
+                    $('.closeevent').toggleClass('hide');
+                }
+                event_count++;
+            });
+            $.get('http://api.p.rx/api/EventPlatform/GetExecuteNum',{ card: "00001109"}, function (res) {
+                $('#topNum').html(res[0].totExecute);
+            }, 'json');
+             
+            $(".event-div2").click(function () {
+                $(".if-cs").attr('src',ifram2);
+                $(".if-cs").toggleClass("hide");
+                $(".if-cs").height('100%').width('100%');
+                $('.if-cs').css('background-color','white');
+                $(".if-cs").css('right','0');
+                $('.closeevent').toggleClass('hide');
+                $('.closeevent').css('right',30);
+                $('.closeevent').css('top',15)
+                if(event_count!=0){
+                    $(".if-cs").toggleClass("hide");
+                    $('.closeevent').toggleClass('hide');
+                }
+                event_count++;
+
+            });
+        });
+
+
+        function closeevent() {
+            $(".if-cs").toggleClass("hide");
+            $('.closeevent').toggleClass('hide');
+            event_count=0;
+        }
+    </script>
+
+    <!--系统-->
+    <script>
+    	
+    	//执  应用 团  师
+//      $(function () {
+//      	
+//          //加载菜单
+//          $('.military-index').addClass('active');
+////          $("#dailyLeftNav").load("http://d.p.rx/Manager/Commen/CommenMenu?sys=3", function () {
+////          
+////          });
+//			
+//          //计算高度
+//          countdaily();
+//
+//          //隔行换色
+//          rxued.table.LChangeapart($(".uiTable  tbody tr"), "#fff", "#fcfcfc");
+//          rxued.table.hoverChage($(".uiTable  tbody tr"), "#eaf4fe");
+//          //左侧表格点击
+//          $(".dailylft tbody tr").click(function () {
+//              $(this).addClass("tractive").siblings().removeClass("tractive");
+//          });
+//
+//      });
+
+//      $(function () {
+//          var vm = new Vue({
+//              el: '#vm_container',
+//              data: {
+//                  tid: 0, //团id
+//                  searchId: 0,
+//                  t_type: '3',
+//                  em_system: '7',
+//                  random: 0,
+//                  num_visit: 0,
+//                  currview: 3,
+//                  list: [],
+//                  week: null,
+//                  month: null,
+//                  markId: 0,
+//              },
+//              watch: {
+//                  markId: function () {
+//                      this.$http.get('http://d.p.rx/Manager/Index/DataPoolTwoLevel', { params: { markId: this.markId } }).then(function (res) {
+//                          this.list = res.body.weekList;
+//                          this.week = res.body.weekData;
+//                          this.month = res.body.monthDate;
+//                      });
+//                  }
+//              },
+//              methods: {
+//                  searchEvent: function (val) {
+//                      this.searchId = val;
+//                  },
+//                  clicktrEvent: function (val) {
+//                      this.tid = val;
+//                  },
+//                  addVisitEvent: function () {
+//                      this.num_visit = Math.random();
+//                  },
+//                  items_length: function () {
+//                      var num = 0;
+//                      var tmp = [];
+//                      var len = parseInt(this.items.length % 3 > 0 ? this.items.length / 3 + 1 : this.items.length / 3);
+//                      for (var i = 0; i < len; i++) {
+//                          tmp.push([{ item: this.items[num] }, { item: this.items[num + 1] }, { item: this.items[num + 2] }]);//[...this.items];
+//                          num = num + 3;
+//                      }
+//                      this.items_new = tmp;
+//                      return tmp.length;
+//                  }
+//              },
+//              components: {
+//                  groupSearch: components.groupSearch(),
+//                  systemList: components.systemList(),
+//                  middleView: components.middleView(),
+//                  visitRecordDevelop: components.visitRecordDevelop(),
+//                  addVisitView: components.addVisitView(),
+//              },
+//              ready: function () {
+//
+//              }
+//
+//          });
+//
+//          //滚动条
+//          $(".uiTab7ConScroll").slimScroll({ height: "100%", borderRadius: "6px" });
+//          $(".cen-slid").height($("body").height() - $("#topnav").height() - 23);
+//          $(".cens-scroll").height($(".cen-slid").height() - 275).slimScroll({ height: $(".cens-scroll").height() });
+//
+//
+//          $(".cl-no").click(function () {
+//              $(this).parents(".cen-slid").stop().animate({ "left": "-100%", "opacity": "0" }, 500);
+//              $(".analyItem").removeClass("anItemBor-active");
+//          });
+//
+//
+//          $(".juers1").click(function () {
+//              $(this).addClass("anItemBor-active");
+//              $(".dailyrgt-right .cen-slid1").stop().animate({ "left": "0%", "opacity": "1" }, 500);
+//          });
+//
+//
+//          $(".apply-cour").height($("body").height() - $("#topnav").height() - 263);
+//          $(".rig_close").click(function () {
+//              $(this).parents(".apply-cour").stop().animate({ "left": "-100%", "opacity": "0" }, 500);
+//          });
+//
+//      });
+    </script>
+    
+  	<script type="text/javascript">
+    	$(".if-scroll").height($("body").height()-$("#topnav").height()-10);
+    	//执 应用 团 师 的url
+    	var urls=["http://e.p.rx//EventAdmin/Examine/LocalEventListView?card=00001109&department=10&diqu=39",
+    		"./team.html"
+    		];
+    	$(".if-uiTab1 li").click(function(){
+    		var i=$(this).index();
+    		$(this).addClass("uiTab1-active").siblings().removeClass("uiTab1-active");
+    			$(".if-scroll").attr({src:urls[i]});
+    	});
+    	
+    	debugger
+    	$(function(){
+					$(".tj_bottom p").eq(0).html($('tr').size()-1);
+				});
+    </script>
+
+
+
+</body>
+</html>
